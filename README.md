@@ -4,7 +4,7 @@ A RESTful API for managing a course catalogue, built with ASP.NET Core and Entit
 
 ## Table of Contents
 - [Architecture](#architecture)
-- [Setup Instructions](#setup-instructions
+- [Setup Instructions](#setup-instructions)
   - [Prerequisites](#prerequisites)
   - [Steps](#steps)
 - [Dependencies](#dependencies)
@@ -62,6 +62,7 @@ Microsoft.EntityFrameworkCore.SqlServer (EF Core SQL Server provider)
 Swashbuckle.AspNetCore (Swagger/OpenAPI integration)
 
 ##Testing the API
+
 You can test the API using the Swagger UI or tools like Postman or cURL. Below are example requests for each endpoint:
 
 1. Create a Coursebash
