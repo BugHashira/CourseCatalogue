@@ -56,12 +56,13 @@ The API will be available at http://localhost:5000 (or the port specified in app
 5. **Access Swagger UI**:
    Navigate to http://localhost:5000/swagger in your browser to view the API documentation and test endpoints.
 
-##Dependencies
+## Dependencies
+
 Microsoft.AspNetCore.Mvc (ASP.NET Core MVC)
 Microsoft.EntityFrameworkCore.SqlServer (EF Core SQL Server provider)
 Swashbuckle.AspNetCore (Swagger/OpenAPI integration)
 
-##Testing the API
+## Testing the API
 
 You can test the API using the Swagger UI or tools like Postman or cURL. Below are example requests for each endpoint:
 
