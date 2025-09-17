@@ -8,7 +8,6 @@ A RESTful API for managing a course catalogue, built with ASP.NET Core and Entit
   - [Prerequisites](#prerequisites)
   - [Steps](#steps)
 - [Dependencies](#dependencies)
-- [Setup](#setup)
 - [Testing the API](#testing-the-api)
   
 ## Architecture
@@ -66,9 +65,10 @@ Swashbuckle.AspNetCore (Swagger/OpenAPI integration)
 
 You can test the API using the Swagger UI or tools like Postman or cURL. Below are example requests for each endpoint:
 
-1. Create a Coursebash
+1. Create a Course:
 
-curl -X POST "http://localhost:5000/api/Courses/add-course" \
+   ```bash
+   curl -X POST "http://localhost:5000/api/Courses/add-course" \
 -H "Content-Type: application/json" \
 -d '{
   "title": "Introduction to C#",
@@ -77,7 +77,9 @@ curl -X POST "http://localhost:5000/api/Courses/add-course" \
   "instructor": "John Doe"
 }'
 
-Response (200 OK):json
+Response (200 OK):
+
+json
 
 {
   "isSuccessful": true,
@@ -87,9 +89,10 @@ Response (200 OK):json
   "data": "guid-value"
 }
 
-2. Update a Coursebash
-
-curl -X PATCH "http://localhost:5000/api/Courses/update-course" \
+2. Update a Course
+   
+   ```bash
+   curl -X PATCH "http://localhost:5000/api/Courses/update-course" \
 -H "Content-Type: application/json" \
 -d '{
   "id": "guid-value",
@@ -99,7 +102,9 @@ curl -X PATCH "http://localhost:5000/api/Courses/update-course" \
   "instructor": "Jane Doe"
 }'
 
-Response (200 OK):json
+Response (200 OK):
+
+json
 
 {
   "isSuccessful": true,
@@ -109,11 +114,14 @@ Response (200 OK):json
   "data": true
 }
 
-3. Delete a Coursebash
+3. Delete a Course:
+4. 
+   ```bash
+   curl -X DELETE "http://localhost:5000/api/Courses/delete-course?id=guid-value"
 
-curl -X DELETE "http://localhost:5000/api/Courses/delete-course?id=guid-value"
+Response (200 OK):
 
-Response (200 OK):json
+json
 
 {
   "isSuccessful": true,
@@ -123,11 +131,14 @@ Response (200 OK):json
   "data": true
 }
 
-4. Get a Course by IDbash
+4. Get a Course by ID:
 
-curl -X GET "http://localhost:5000/api/Courses/guid-value"
+   ```bash
+   curl -X GET "http://localhost:5000/api/Courses/guid-value"
 
-Response (200 OK):json
+Response (200 OK):
+
+json
 
 {
   "isSuccessful": true,
@@ -143,11 +154,15 @@ Response (200 OK):json
   }
 }
 
-5. Get All Coursesbash
+5. Get All Courses
 
-curl -X GET "http://localhost:5000/api/Courses/courses"
+   ```bash
 
-Response (200 OK):json
+   curl -X GET "http://localhost:5000/api/Courses/courses"
+
+Response (200 OK):
+
+json
 
 {
   "isSuccessful": true,
