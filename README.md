@@ -57,9 +57,11 @@ The API will be available at http://localhost:5000 (or the port specified in app
 
 ## Dependencies
 
-Microsoft.AspNetCore.Mvc (ASP.NET Core MVC)
-Microsoft.EntityFrameworkCore.SqlServer (EF Core SQL Server provider)
-Swashbuckle.AspNetCore (Swagger/OpenAPI integration)
+- Microsoft.AspNetCore.Mvc (ASP.NET Core MVC)
+  
+- Microsoft.EntityFrameworkCore.SqlServer (EF Core SQL Server provider)
+  
+- Swashbuckle.AspNetCore (Swagger/OpenAPI integration)
 
 ## Testing the API
 
