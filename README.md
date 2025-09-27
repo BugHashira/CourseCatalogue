@@ -1,6 +1,6 @@
-# Course Catalogue API
+#  Student Enrollment System API
 
-A RESTful API for managing a course catalogue, built with ASP.NET Core and Entity Framework Core. The API supports CRUD operations for courses, with a SQL Server database for persistence.
+A RESTful API for managing courses, students, and enrollments, built with ASP.NET Core, EF Core, and Clean Architecture.
 
 ## Table of Contents
 - [Architecture](#architecture)
@@ -14,10 +14,10 @@ A RESTful API for managing a course catalogue, built with ASP.NET Core and Entit
 
 The project follows a **Clean Architecture** approach with the following layers:
 
-- **CourseCatalogue.API**: Contains the ASP.NET Core Web API, including controllers (`CoursesController`) and configuration (`Program.cs`, `appsettings.json`).
-- **CourseCatalogue.Application**: Handles business logic, including services (`CourseService`) and DTOs (`CourseDto`, `CreateCourseDto`, `UpdateCourseDto`).
-- **CourseCatalogue.Domain**: Defines core entities (`Course`) and response models (`ResponseModel`).
-- **CourseCatalogue.Infrastructure**: Manages data persistence using Entity Framework Core (`CourseCatalogueContext`) and migrations.
+- **Domain**: Entities (`Course`, `Student`, `Enrollment`) and `ResponseModel`.
+- **Application**: DTOs, service interfaces, and business logic (services directly use `CourseCatalogueContext`).
+- **Infrastructure**: EF Core DbContext.
+- **Presentation**: Controllers, Swagger, and JWT configuration.
 
 The API uses a generic `ResponseModel` to standardize responses, including success/failure status, messages, and data.
 
@@ -31,29 +31,27 @@ The API uses a generic `ResponseModel` to standardize responses, including succe
 ### Steps
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/<your-username>/CourseCatalog.git
-   cd CourseCatalogue
+   git clone https://github.com/BugHashira/CourseCatalogue
 
-   cd CourseCatalog
-
-2. **Restore Dependencies**:
+2. **Install Dependencies**:
    ```bash
    dotnet restore
 
 3. **Configure Database**:
    Update the connection string in src/CourseCatalog.API/appsettings.json to point to your SQL Server instance.
 
-   Apply migrations to create the database:bash
-   dotnet ef database update --project src/CourseCatalog.Infrastructure --startup-project src/CourseCatalog.API
+   Apply migrations to create the database:
+   ```bash
+   dotnet ef database update --project src/CourseCatalogue
 
 5. **Run the Application**:
    ```bash
-   dotnet run --project src/CourseCatalog.API
+   dotnet run --project src/CourseCatalogue
 
-The API will be available at http://localhost:5000 (or the port specified in appsettings.json).
+The API will be available at http://localhost:7071 (or the port specified in appsettings.json).
 
 5. **Access Swagger UI**:
-   Navigate to http://localhost:5000/swagger in your browser to view the API documentation and test endpoints.
+   Navigate to http://localhost:7071/swagger in your browser to view the API documentation and test endpoints.
 
 ## Dependencies
 
