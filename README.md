@@ -67,19 +67,19 @@ The API will be available at http://localhost:7071 (or the port specified in app
 - Microsoft.AspNetCore.Authentication.JwtBearer (JWT-based authentication)
 
 ## Endpoints
-POST /api/students/register: Register a new student.
-POST /api/students/login: Authenticate a student and return a JWT.
-GET /api/students/{id}: Get student by ID (requires authentication).
-GET /api/students: Get all students (requires authentication).
-PUT /api/students/{id}: Update a student (requires authentication).
-DELETE /api/students/{id}: Delete a student (requires authentication).
-POST /api/enrollments/enroll: Enroll a student in a course (requires authentication).
-GET /api/enrollments/student/{studentId}/courses: Get enrolled courses for a student (requires authentication).
-POST /api/courses/add-course: Create a course.
-PATCH /api/courses/update-course: Update a course.
-DELETE /api/courses/delete-course: Delete a course.
-GET /api/courses/{id}: Get a course by ID.
-GET /api/courses/courses: Get courses with optional filtering and pagination.
+- POST /api/students/register: Register a new student.
+- POST /api/students/login: Authenticate a student and return a JWT.
+- GET /api/students/{id}: Get student by ID (requires authentication).
+- GET /api/students: Get all students (requires authentication).
+- PUT /api/students/{id}: Update a student (requires authentication).
+- DELETE /api/students/{id}: Delete a student (requires authentication).
+- POST /api/enrollments/enroll: Enroll a student in a course (requires authentication).
+- GET /api/enrollments/student/{studentId}/courses: Get enrolled courses for a student (requires authentication).
+- POST /api/courses/add-course: Create a course.
+- PATCH /api/courses/update-course: Update a course.
+- DELETE /api/courses/delete-course: Delete a course.
+- GET /api/courses/{id}: Get a course by ID.
+- GET /api/courses/courses: Get courses with optional filtering and pagination.
 
 ## Testing the API
 ```bash
