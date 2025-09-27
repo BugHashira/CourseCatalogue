@@ -1,5 +1,5 @@
 using CourseCatalogue.Application.Dtos;
-using CourseCatalogue.Application.Services;
+using CourseCatalogue.Application.Interfaces;
 using CourseCatalogue.Domain;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,7 +7,7 @@ namespace CourseCatalogue.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class CoursesController(CourseService courseService) : ControllerBase
+public class CourseController(ICourseService courseService) : ControllerBase
 {
     [HttpPost("add-course")]
     [ProducesResponseType(typeof(ResponseModel<Guid>), 200)]
@@ -48,9 +48,9 @@ public class CoursesController(CourseService courseService) : ControllerBase
     [HttpGet("courses")]
     [ProducesResponseType(typeof(ResponseModel<IEnumerable<CourseDto>>), 200)]
     [ProducesResponseType(typeof(ResponseModel<IEnumerable<CourseDto>>), 400)]
-    public async Task<IActionResult> GetCoursesAsync()
+    public async Task<IActionResult> GetCoursesAsync([FromQuery] string? title, [FromQuery] string? instructor, [FromQuery] int page = 1, [FromQuery] int pageSize = 10)
     {
-        var result = await courseService.GetAllAsync();
+        var result = await courseService.GetAllAsync(title, instructor, page, pageSize);
         return StatusCode(result.StatusCode, result);
     }
 }

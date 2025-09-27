@@ -7,4 +7,6 @@ public class Course
     public string Description { get; set; }
     public string Duration { get; set; }
     public string Instructor { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public List<Enrollment> Enrollments { get; set; } = new();
 }
